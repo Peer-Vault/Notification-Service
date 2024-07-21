@@ -1,4 +1,4 @@
-//package com.peer.vault.notification_service.messaging;
+//package com.peer.vault.notification_service.service;
 //
 //import com.peer.vault.notification_service.constant.KafkaConstant;
 //import com.peer.vault.notification_service.dto.FileShareEvent;
@@ -8,9 +8,12 @@
 //@Service
 //public class FileShareConsumerService {
 //
-//    @KafkaListener(topics = KafkaConstant.TOPIC_FILE_SHARED, groupId = "file-share-group")
+//    @KafkaListener(
+//            topics = KafkaConstant.FILE_SHARED_TOPIC,
+//            groupId = KafkaConstant.FILE_SHARE_GROUP,
+//            containerFactory = "kafkaListenerContainerFactory"
+//    )
 //    public void consumeFileShareEvent(FileShareEvent event) {
-//        // Process the event
 //        System.out.println("Consumed event: " + event);
 //    }
 //}

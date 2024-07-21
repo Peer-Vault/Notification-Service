@@ -4,24 +4,37 @@ spring:
   config:
     import: optional:configserver:http://localhost:8071/
 
-
 #  kafka:
 #    bootstrap-servers: localhost:9095
 #    consumer:
-#      group-id: ${KAFKA_CONSUMER_GROUP_ID}
-#      auto-offset-reset: earliest
 #      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 #      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      group-id: file-share-group
 #      properties:
-#        spring.json.value.default.type: com.peer.vault.notification_service.dto.FileShareEvent
+#        spring:
+#          json:
+#            trusted:
+#              packages: 'com.peer.vault.notification_service.dto'
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: manishkchoudhary9650@gmail.com
+    password: ejaszgymhoqaneao
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
 
-logging:
-  level:
-    org:
-      apache:
-        kafka:
-          clients: error
-          common: error
-      spring:
-        kafka: error
+#logging:
+#  level:
+#    org:
+#      apache:
+#        kafka:
+#          clients: error
+#          common: error
+#      spring:
+#        kafka: error
