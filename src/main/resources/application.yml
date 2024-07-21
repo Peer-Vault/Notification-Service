@@ -4,6 +4,18 @@ spring:
   config:
     import: optional:configserver:http://localhost:8071/
 
+
+#  kafka:
+#    bootstrap-servers: localhost:9095
+#    consumer:
+#      group-id: ${KAFKA_CONSUMER_GROUP_ID}
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      properties:
+#        spring.json.value.default.type: com.peer.vault.notification_service.dto.FileShareEvent
+
+
 logging:
   level:
     org:
