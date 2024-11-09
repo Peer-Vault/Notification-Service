@@ -13,10 +13,7 @@ public class EmailService {
     private NotificationService notificationService;
 
 
-    public void sendRegistrationSuccessEmail(UserCredential credential) {
-        String firstName = credential.getFirstName();
-        String lastName = credential.getLastName();
-        String email = credential.getEmail();
+    public void sendRegistrationSuccessEmail(String email, String firstName, String lastName) {
 
         String emailBody = String.format(
                 "Dear %s %s,\n\n" +
