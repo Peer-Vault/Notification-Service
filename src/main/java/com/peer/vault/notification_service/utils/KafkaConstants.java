@@ -4,6 +4,8 @@ public final class KafkaConstants {
 
     public static final String USER_REGISTRATION = "PEER_VAULT_USER_REGISTRATION";
 
+    public static final String File_SHARED = "PEER_VAULT.FILE_SHARED";
+
     public static final String GROUP_EMAIL = "GROUP_EMAIL";
 
     public static final String HOST_AND_PORT = "localhost:29092";

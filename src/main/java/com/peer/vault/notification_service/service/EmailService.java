@@ -31,6 +31,26 @@ public class EmailService {
         notificationService.sendEmail(emailRequest);
     }
 
+    public void sendFileSharedEmail(String email, String fileUrl) {
+        String emailBody = String.format(
+                "Dear User,\n\n" +
+                        "You have received a file.\n\n" +
+                        "Here is the file URL: %s\n\n" +
+                        "If you have any questions or need further assistance, please feel free to reach out to our support team.\n\n" +
+                        "Best regards,\n\n" +
+                        "The Peer Vault Team\n" +
+                        "Contact: 8955946276\n" +
+                        "Email: cmanishkumar193@gmail.com",
+                fileUrl);
+
+        EmailRequest emailRequest = new EmailRequest();
+        emailRequest.setTo(email);
+        emailRequest.setSubject("You have received a file");
+        emailRequest.setBody(emailBody);
+
+        notificationService.sendEmail(emailRequest);
+    }
+
 //    public void sendRegistrationSuccessEmailToStudent(String email, String enrollmentNumber) {
 //        String emailBody = String.format(
 //                "Dear Student,\n\n" +
